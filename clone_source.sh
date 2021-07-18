@@ -10,6 +10,11 @@ sed -i -e 's/OpenWrt/TPLink_WR841Nv7/g' -e 's/encryption=none/encryption=psk2/g'
 # 修改WiFi名称,添加加密方式和密码
 sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default                                      #使用源码自带ShadowSocksR Plus软件
 
+sed -i -e '1s/$/^e82d730/g' feeds.conf.default
+sed -i -e '2s/$/^974fb04/g' feeds.conf.default
+sed -i -e '3s/$/^54fd237/g' feeds.conf.default
+sed -i -e '4s/$/^2071d9f/g' feeds.conf.default
+
 ./scripts/feeds update -a -f
 ./scripts/feeds install -a -f
 
